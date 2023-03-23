@@ -8,7 +8,7 @@ namespace Tap.LinqCollection
 {
     internal class CarService
     {
-        CarRepository carRepository;//
+        CarRepository carRepository;
 
         public CarService(CarRepository carRepository)
         {
