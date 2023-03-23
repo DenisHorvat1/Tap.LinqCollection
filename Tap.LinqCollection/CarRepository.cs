@@ -25,22 +25,38 @@ namespace Tap.LinqCollection
 
         public List<Car> GetSpeedCars() {
 
-            return cars.Where(car => car.MaxSpeedKmh > 180).ToList();
+            return cars.Where(car => car.MaxSpeedKmh > 180)
+                       .ToList();
 
         }
         public List<Car> GetHighAutonomyCars() {
 
-            return cars.Where(car => car.IsElectric && car.AutonomyKm > 400).ToList();
+            return cars.Where(car => car.IsElectric && car.AutonomyKm > 400)
+                       .ToList();
 
         }
 
         public int GetNumberOfDecentCars()
         {
 
-            return cars.Where(car => car.MaxSpeedKmh > 100 && car.MaxSpeedKmh < 200).ToList().Count();
+            return cars.Where(car => car.MaxSpeedKmh > 100 && car.MaxSpeedKmh < 200)
+                       .ToList()
+                       .Count();
 
         }
 
+        public List<string> GetElectricCarBrands()
+        {
+            List<string> electricBrands = cars
+                .Where(car => car.IsElectric)
+                .Select(car => car.Brand)
+                .Distinct()
+                .ToList();
 
-    }
+            return electricBrands;
+        }
+
+        public List<Car> GetCarsByPage(int pageNumber, int pageSize)
+        {
+        }
 }
