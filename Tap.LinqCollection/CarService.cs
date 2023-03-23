@@ -15,6 +15,5 @@ namespace Tap.LinqCollection
             this.carRepository = carRepository;
         }
 
-
     }
 }
