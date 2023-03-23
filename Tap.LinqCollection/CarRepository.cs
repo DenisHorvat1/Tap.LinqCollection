@@ -28,6 +28,11 @@ namespace Tap.LinqCollection
             return cars.Where(car => car.MaxSpeedKmh > 180).ToList();
 
         }
+        public List<Car> GetHighAutonomyCars() {
+
+            return cars.Where(car => car.IsElectric && car.AutonomyKm > 400).ToList();
+
+        }
 
 
     }
