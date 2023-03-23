@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tap.LinqCollection
 {
-    internal class Car
+    class Car
     {
         public int Id { get; set; }
         public string Brand { get; set; }

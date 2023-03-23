@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tap.LinqCollection
 {
-    internal class CarRepository
+    class CarRepository
     {
-        public List<Car> GetAll() {
-
-            List<Car> cars = new List<Car>
+        public List<Car> cars = new List<Car>
             {
                 new Car { Id = 1, Brand = "Dacia", Model = "Spring", IsElectric = true, AutonomyKm = 300,  MaxSpeedKmh = 120 },
                 new Car { Id = 2, Brand = "VW", Model = "Polo", IsElectric = false, AutonomyKm = 850, MaxSpeedKmh = 180 },
@@ -18,8 +16,13 @@ namespace Tap.LinqCollection
                 new Car { Id = 4, Brand = "Tesla", Model = "Model 3", IsElectric = true, AutonomyKm =  500, MaxSpeedKmh = 260 },
                 new Car { Id = 5, Brand = "Opel", Model = "Astra", IsElectric = false, AutonomyKm = 1010, MaxSpeedKmh = 190 }
 
-
             };
+        public List<Car> GetAll() {
+
+            return cars.Select(car => car).ToList(); 
+
         }
+
+
     }
 }
