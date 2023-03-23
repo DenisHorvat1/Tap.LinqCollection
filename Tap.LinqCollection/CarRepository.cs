@@ -34,6 +34,13 @@ namespace Tap.LinqCollection
 
         }
 
+        public int GetNumberOfDecentCars()
+        {
+
+            return cars.Where(car => car.MaxSpeedKmh > 100 && car.MaxSpeedKmh < 200).ToList().Count();
+
+        }
+
 
     }
 }
