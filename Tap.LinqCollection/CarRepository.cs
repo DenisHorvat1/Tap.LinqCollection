@@ -17,19 +17,22 @@ namespace Tap.LinqCollection
                 new Car { Id = 5, Brand = "Opel", Model = "Astra", IsElectric = false, AutonomyKm = 1010, MaxSpeedKmh = 190 }
 
             };
-        public List<Car> GetAll() {
+        public List<Car> GetAll()
+        {
 
-            return cars.Select(car => car).ToList(); 
+            return cars.Select(car => car).ToList();
 
         }
 
-        public List<Car> GetSpeedCars() {
+        public List<Car> GetSpeedCars()
+        {
 
             return cars.Where(car => car.MaxSpeedKmh > 180)
                        .ToList();
 
         }
-        public List<Car> GetHighAutonomyCars() {
+        public List<Car> GetHighAutonomyCars()
+        {
 
             return cars.Where(car => car.IsElectric && car.AutonomyKm > 400)
                        .ToList();
@@ -58,5 +61,7 @@ namespace Tap.LinqCollection
 
         public List<Car> GetCarsByPage(int pageNumber, int pageSize)
         {
+            return cars.Skip(pageNumber * pageSize).Take(pageSize).ToList();
         }
+    }
 }
