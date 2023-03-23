@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Tap.LinqCollection
 {
-    internal class CarService
+    public class CarService : ICarRepository
     {
-        CarRepository carRepository;
+        public CarRepository carRepository;
 
         public CarService(CarRepository carRepository)
         {
             this.carRepository = carRepository;
         }
 
+        public List<Car> GetAll()
+        {
+
+            return cars.Select(car => car).ToList();
+
+        }
     }
 }
