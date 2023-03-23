@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tap.LinqCollection
 {
-    public class CarRepository
+    public class CarRepository : ICarRepository
     {
         public List<Car> cars = new List<Car>
             {

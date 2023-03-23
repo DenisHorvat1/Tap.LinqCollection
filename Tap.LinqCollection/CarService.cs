@@ -8,9 +8,9 @@ namespace Tap.LinqCollection
 {
     public class CarService : ICarRepository
     {
-        public CarRepository carRepository;
+        public ICarRepository carRepository;
 
-        public CarService(CarRepository carRepository)
+        public CarService(ICarRepository carRepository)
         {
             this.carRepository = carRepository;
         }
@@ -18,7 +18,7 @@ namespace Tap.LinqCollection
         public List<Car> GetAll()
         {
 
-            return cars.Select(car => car).ToList();
+            return carRepository.GetAll().Select(car => car).ToList();
 
         }
     }
