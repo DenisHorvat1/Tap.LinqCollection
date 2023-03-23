@@ -23,6 +23,12 @@ namespace Tap.LinqCollection
 
         }
 
+        public List<Car> GetSpeedCars() {
+
+            return cars.Where(car => car.MaxSpeedKmh > 180).ToList();
+
+        }
+
 
     }
 }
